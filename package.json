@@ -1,0 +1,18 @@
+{
+  "name": "baiyu-issues",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prepare": "bash prepare.sh",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint --fix --ext .js src/",
+    "lint:prettier": "prettier --write \"src/**/*.js\"",
+    "lint:commit": "commitlint --g commitlint.config.js -e",
+    "commit": "cz"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@baiyusoup/lint-config": "^1.0.0",
+    "@baiyusoup/templates": "^1.0.0"
+  }
+}

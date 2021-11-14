@@ -1,18 +1,66 @@
 {
-  "name": "baiyu-issues",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "prepare": "bash prepare.sh",
-    "lint": "npm run lint:eslint && npm run lint:prettier",
-    "lint:eslint": "eslint --fix --ext .js src/",
-    "lint:prettier": "prettier --write \"src/**/*.js\"",
-    "lint:commit": "commitlint --g commitlint.config.js -e",
-    "commit": "cz"
+  "name": "easy-issue",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "author": "Baiyusoup <1575727840@qq.com>",
+  "description": "一个可以根据指定的markdown文件生成GitHub issue的小工具",
+  "keywords": [
+    "markdown",
+    "issue"
+  ],
+  "license": "MIT",
+  "bin": {
+    "issue": "dist/issue.js"
   },
-  "dependencies": {},
+  "directories": {
+    "dist": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baiyusoup/easy-issue.git"
+  },
+  "homepage": "https://github.com/Baiyusoup/easy-issue#readme.md",
+  "bugs": {
+    "url": "https://github.com/Baiyusoup/easy-issue/issues"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "npm run lint:eslint && npm run format",
+    "lint:eslint": "eslint --fix --ext .js src/",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint:commit": "commitlint --g commitlint.config.js -e",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "commit": "cz",
+    "issue": "issue"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "fs-extra": "^10.0.0",
+    "gray-matter": "^4.0.3",
+    "minimist": "^1.2.5",
+    "picocolors": "^1.0.0"
+  },
   "devDependencies": {
-    "@baiyusoup/lint-config": "^1.0.0",
-    "@baiyusoup/templates": "^1.0.0"
+    "@antfu/eslint-config": "^0.10.0",
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-angular": "^14.1.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "enquirer": "^2.3.6",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "execa": "^5.1.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.0.2",
+    "prettier": "^2.4.1",
+    "rollup": "^2.60.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "semver": "^7.3.5"
   }
 }

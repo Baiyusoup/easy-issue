@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['eslint-config-ali/node', 'prettier'],
+  extends: ['@antfu', 'prettier'],
 };

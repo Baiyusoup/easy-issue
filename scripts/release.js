@@ -138,8 +138,6 @@ async function publishPackage(version, runIfNotDry) {
     releaseTag = 'beta';
   } else if (version.includes('rc')) {
     releaseTag = 'rc';
-  } else {
-    releaseTag = 'latest';
   }
 
   step(`Publishing ${pkgName}...`);

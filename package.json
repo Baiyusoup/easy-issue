@@ -1,6 +1,6 @@
 {
   "name": "easy-issue",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "author": "Baiyusoup <1575727840@qq.com>",
   "description": "一个可以根据指定的markdown文件生成GitHub issue的小工具",
@@ -33,6 +33,7 @@
     "format": "prettier --write \"src/**/*.js\"",
     "lint:commit": "commitlint --g commitlint.config.js -e",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "release": "node scripts/release.js",
     "commit": "cz",
     "issue": "issue"
   },

@@ -1,4 +1,4 @@
-# baiyu-issues
+# easy-issue
 
 一个根据本地 markdown 文件（需要指定）生成 github issue，并推送到个人仓库（需要指定）的小工具。
 
@@ -17,7 +17,7 @@
 安装
 
 ```shell
-npm i baiyu-issues -D
+npm i easy-issues -D
 ```
 
 安装完成之后，执行：
@@ -26,30 +26,45 @@ npm i baiyu-issues -D
 npx issue init
 ```
 
-这个命令执行后，`baiyu-issues`会将`issue`命令添加到 package.json 的 scripts 里面，然后在根目录下创建`issue.config.js`和`editor.md`文件。当然，你也可以不需要执行这个命令，直接在根目录下创建`issue.config.js`和`editor.md`文件。
+这个命令执行后，`easy-issue`会将`issue`命令添加到 package.json 的 scripts 里面，然后在根目录下创建`issue.config.js`和`editor.md`文件。当然，你也可以不需要执行这个命令，直接在根目录下创建`issue.config.js`和`editor.md`文件。
 
 你在`editor.md`里面写完你的内容之后，在终端执行
 
 ```shell
 npm run issue
+```
 
-// or
+或者
+
+```
 npx issue
 ```
 
-`baiyu-issue`就会解析`editor.md`，生成 GitHub issue，然后上传到指定仓库。
+`easy-issue`就会解析`editor.md`，生成 GitHub issue，然后上传到指定仓库。
 
-## 例子
+## issue.config.js
+
+```js
+module.exports = {
+  owner: '用户名',
+  repo: '指定仓库',
+  accessToken: 'personal access token',
+  editor: 'issue内容的markdown文件名（可选，默认是根目录下的editor.md）',
+};
+```
+
+## editor 文件
+
+格式必须如下：
 
 ```text
 ---
-title: Test baiyu-issue
+title: 'issue名称'
 labels:
-  - enhancement
-  - wontfix
+  - label1
+  - ...
 ---
-
-## 介绍
-
-`baiyu-issues`是一个用来读取指定 markdown 内容生成 issue，并推送到指定 github 仓库的小工具
+你的issue内容
 ```
+
+需要注意的是`labels`所指定的 issue label 必须是存在仓库里面。

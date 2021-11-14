@@ -1,6 +1,6 @@
 {
   "name": "easy-issue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "author": "Baiyusoup <1575727840@qq.com>",
   "description": "一个可以根据指定的markdown文件生成GitHub issue的小工具",

@@ -40,7 +40,11 @@ async function postIssue(context, config = {}) {
   githubAPI.setRepoContext(_config);
 
   const response = await githubAPI.createIssue(issue);
-  log.success(`${response.status} ${response.statusText}`);
+
+  log.success(`Issue ${response.status} ${response.statusText}`);
+  log.success(`The issue number ${response.data.number}`);
+  log.success(`Follow link ${response.data.url}`);
+
   return response;
 }
 

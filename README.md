@@ -68,3 +68,21 @@ labels:
 ```
 
 需要注意的是`labels`所指定的 issue label 必须是存在仓库里面。
+
+## Node API
+
+姑且弄了 node api，使用方法如下：
+
+```js
+const easyIssue = require('easy-issue');
+
+// 相当于 npx issue init
+easyIssue.init(context, editor);
+
+// 相当于 npx issue
+easyIssue.post(context, config);
+```
+
+`init()`方法需要提供当前的根目录路径`context`，`editor`默认值是当前根目录下的`editor.md`文件
+
+`post()`方法的参数`context`和`init`方法一样，而参数`config`的内容就是`issue.config.js`。在这种情况下，你可以将 markdown 内容直接传入`config.editor`，它内部会以`/\.md$/`来判断是否将`config.editor`提供的内容作为 issue 的原始内容。
